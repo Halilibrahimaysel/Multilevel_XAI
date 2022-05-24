@@ -1,4 +1,4 @@
-# Multimodal XAI official github page..
+# Multimodal XAI
                                                          Proposed Architecture
 ![](images/modell.JPG)
 
