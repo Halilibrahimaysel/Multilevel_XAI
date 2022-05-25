@@ -1,5 +1,5 @@
 # Multimodal XAI
-This repository contains the official implementation of Multimodal XAI paper submitted to Neurips2022: https://neurips.cc/Conferences/2022.
+This repository contains the official implementation of Multimodal XAI paper submitted to Neurips 2022: https://neurips.cc/Conferences/2022.
 
                                                       Proposed Architecture
 ![](images/modell.JPG)
@@ -9,5 +9,9 @@ This repository contains the official implementation of Multimodal XAI paper sub
 
                                                          Where is Horn?
 ![](images/horns.JPG)
+
+For AwA2 dataset, please visit: https://cvml.ist.ac.at/AwA2/
+
+For CUB dataset, please see : https://authors.library.caltech.edu/27452/1/CUB_200_2011.pdf
                                  
 
