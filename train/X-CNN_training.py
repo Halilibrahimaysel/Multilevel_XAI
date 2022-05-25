@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Apr 20 13:05:39 2022
 
-@author: HALIL IBRAHIM
-"""
 
 from tensorflow.keras.models import load_model
 from tensorflow.keras.utils import to_categorical
@@ -26,14 +22,14 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 from sklearn.model_selection import train_test_split
 
 # 8*8*2048 attributes extracted from the last CNN layer of ResNet101 for all 40k images
-features = np.load(r"D:\datasets\AwA2\last_CNN_features_new.npy")
+features = np.load(r".")
 
 # labels
-labels_alpha = np.load(r"D:\datasets\AwA2\labels.npy")
+labels_alpha = np.load(r".")
 labels_alpha = to_categorical(labels_alpha, dtype ="uint8")
 
 # # #load language model
-language_model = load_model(r'C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\My_code_for_AwA2\language_pre_training\model_8.h5', compile=False)
+language_model = load_model(r'.', compile=False)
 
 #freeze the layer of the language model
 for layer in language_model.layers:
@@ -71,7 +67,7 @@ del features
 
 # #add callbacks
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
-path=r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\My_code_for_AwA2\X-CNN\checkpoints_relu\weights_improvement-{epoch:02d}--{val_accuracy:.2f}.hdf5"
+path=r".\weights_improvement-{epoch:02d}--{val_accuracy:.2f}.hdf5"
 checkpoint = ModelCheckpoint(path, monitor='val_accuracy', verbose=2, save_best_only=True, mode='max')
 early_stop = EarlyStopping(monitor='val_loss', patience=20, verbose=2) 
 

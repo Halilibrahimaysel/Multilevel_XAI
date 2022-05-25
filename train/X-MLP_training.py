@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Apr 20 12:42:56 2022
 
-@author: HALIL IBRAHIM
-"""
+
 
 from tensorflow.keras.models import load_model
 import pandas as pd
@@ -24,10 +21,10 @@ for i in range(2048):
     feature_list.append("feature{}".format(i))
     
 #2048 attributes extracted from ResNet101 for all 40k images
-attributes = pd.read_csv(r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\AwA2-features\Animals_with_Attributes2\Features\ResNet101\AwA2-features.txt", sep=" ", names=feature_list)
+attributes = pd.read_csv(r".\AWA2_dataset\AwA2-features\Animals_with_Attributes2\Features\ResNet101\AwA2-features.txt", sep=" ", names=feature_list)
 
 #import label of classes of 40k images
-labels=pd.read_csv(r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\AwA2-features\Animals_with_Attributes2\Features\ResNet101\AwA2-labels.txt", sep=" ", names=["label"])
+labels=pd.read_csv(r".\AWA2_dataset\AwA2-features\Animals_with_Attributes2\Features\ResNet101\AwA2-labels.txt", sep=" ", names=["label"])
 
 #convert labels to 0-based from 1-based
 for i in range(len(labels)):
@@ -37,7 +34,7 @@ for i in range(len(labels)):
 labels = to_categorical(labels, dtype ="uint8")
 
 #class names in the same order of data file (not alphabetically)
-classes = pd.read_csv(r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\AwA2-data\Animals_with_Attributes2\classes_nonumber.txt", sep=" ")
+classes = pd.read_csv(r".\AWA2_dataset\AwA2-data\Animals_with_Attributes2\classes_nonumber.txt", sep=" ")
 classes=classes["class"].to_list()
 
 #train-test split
@@ -45,7 +42,7 @@ X_train, X_test, y_train, y_test = train_test_split(attributes, labels, test_siz
 del attributes
 
 #load pre-trained language model
-language_model = load_model(r'C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\My_code_for_AwA2\language_pre_training\model_8.h5', compile=False)
+language_model = load_model(r'.\AWA2_dataset\My_code_for_AwA2\language_pre_training\model_8.h5', compile=False)
 
 #freeze the layers of the language model
 for layer in language_model.layers:
@@ -78,7 +75,7 @@ model1.compile(optimizer="Adam",
 
 #add callbacks
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
-path=r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\My_code_for_AwA2\X-MLP\checkpoints_relu\weights_improvement-{epoch:02d}--{val_accuracy:.2f}.hdf5"
+path=r".\weights_improvement-{epoch:02d}--{val_accuracy:.2f}.hdf5"
 checkpoint = ModelCheckpoint(path, monitor='val_accuracy', verbose=2, save_best_only=True, mode='max')
 early_stop = EarlyStopping(monitor='val_loss', patience=20, verbose=2) 
 

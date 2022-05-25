@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 21 11:42:13 2022
 
-@author: HALIL IBRAHIM
-"""
 
 from tensorflow.keras.models import load_model
 import pandas as pd
@@ -40,16 +36,16 @@ np.set_printoptions(suppress=True)
 
 
 #load attribute list
-location=r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\AwA2-data\Animals_with_Attributes2\predicates_nonumber.txt"
+location=r"."
 attributes=pd.read_csv(location, sep=" ")
 predicates=attributes["predicate"].tolist()
 
 #load class list
-classes = pd.read_csv(r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\AwA2-data\Animals_with_Attributes2\classes_nonumber.txt", sep=" ")
+classes = pd.read_csv(r".", sep=" ")
 classes=classes["class"].to_list()
 
 #read an image
-img = load_img(r"D:\datasets\AwA2\Animals_with_Attributes2\JPEGImages\walrus\walrus_10015.jpg", target_size=(256,256))
+img = load_img(r".", target_size=(256,256))
 img = np.array(img)
 
 #plot img
@@ -69,7 +65,7 @@ model = Model(inputs=baseModel.input, outputs=baseModel.get_layer("conv5_block3_
 # # get 8*8*2048 features of the img
 features_img = model.predict(preprocessed_img)
 
-final_model = load_model(r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\My_code_for_AwA2\X-CNN\checkpoints_relu\weights_improvement-13--0.91.hdf5") 
+final_model = load_model(r".") 
 #get the class of img_test_dims
 prediction = final_model.predict(features_img)
 print(classes[np.argmax(prediction)], np.max(prediction))

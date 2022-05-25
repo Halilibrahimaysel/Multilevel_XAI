@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 21 11:25:56 2022
 
-@author: HALIL IBRAHIM
-"""
 
 from tensorflow.keras.applications.resnet import ResNet101
 from tensorflow.keras import layers
@@ -23,17 +19,17 @@ np.set_printoptions(suppress=True)
 
 
 #load attribute list
-location=r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\AwA2-data\Animals_with_Attributes2\predicates_nonumber.txt"
+location=r"."
 attributes=pd.read_csv(location, sep=" ")
 predicates=attributes["predicate"].tolist()
 
 
 #load class list
-classes = pd.read_csv(r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\AwA2-data\Animals_with_Attributes2\classes_nonumber.txt", sep=" ")
+classes = pd.read_csv(r".", sep=" ")
 classes=classes["class"].to_list()
 
 #read an image
-img = load_img(r"C:\Users\HALIL IBRAHIM\Desktop\Desktop\elephant.jpg", target_size=(256,256))
+img = load_img(r".", target_size=(256,256))
 img = np.array(img)
 
 #plot img
@@ -58,7 +54,7 @@ headModel = Model(inputs=baseModel.input, outputs=headModel)
 features_first_img = headModel.predict(preprocessed_img)
 
 #load the model which is trained before (MLP+language model)
-model=load_model(r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\My_code_for_AwA2\X-MLP\checkpoints_relu\weights_improvement-13--0.91.hdf5")
+model=load_model(r".")
 
 
 #get the class of img_test_dims

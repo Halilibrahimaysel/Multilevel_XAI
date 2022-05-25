@@ -93,60 +93,11 @@ print("Accuracy on original-test-set is :", accuracy_score(labels_samples, sampl
 
 
 #save the trained model
-model.save(r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\My_code_for_AwA2\language_pre_training\model_8.h5")
+model.save(r".")
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-# #DETECTION of MISCLASSIFICATION
-
-#Y OU DO NOT NEED THE CLASSES ALIGNMENT WHEN DO THE LABEL ENCODER BASED ON INDEX!!!
-# #change the classes according to LabelEncoder as it transform lexicographically---
-# #this step has nothing to do with training and is done for misclassification step at the end 
-# new_data_labels_copy=new_data["labels"]
-# new_data_labels_copy = new_data_labels_copy.to_list()
-
-# classes_ordered = [None]*50
-# for i in range(len(classes)):
-#     del classes_ordered[new_data_labels_copy[i]] 
-#     classes_ordered.insert(new_data_labels_copy[i], classes[i])
-
-
-
-# # #find the misclassfied tweets in test set
-# # misclassified_ones = pd.DataFrame(columns = ['classes', 'prediction'], index=range(len(X_test)))
-
-# # for i in range(len(X_test)):
-# #     if y_test[i] != y_pred_test[i]:
-# #         misclassified_ones.features[i]=[X_test.iloc[i]]
-# #         misclassified_ones.classes[i]=[classes_ordered[y_test[i]]]
-# #         misclassified_ones.prediction[i]=[classes_ordered[y_pred_test[i]]]
-        
-# # misclassified_ones=misclassified_ones.dropna()
-
-
-# # CHECK THE MISCLASSIFIED SAMPLES
-# misclassified_ones = pd.DataFrame(columns = ['classes', 'prediction'], index=range(len(samples)))
-
-# for i in range(len(samples)):
-#     if labels_samples[i] != sample_pred[i]:
-#         misclassified_ones.classes[i]=[classes_ordered[labels_samples[i]]]
-#         misclassified_ones.prediction[i]=[classes_ordered[sample_pred[i]]]
-        
-# misclassified_ones=misclassified_ones.dropna()
 
 
 

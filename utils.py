@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Feb  5 14:19:27 2022
 
-@author: HALIL IBRAHIM
-
-"""
 
 import pandas as pd
 import random
@@ -77,10 +72,10 @@ def random_sampling(df, n_samples, n_columns):
 #function for AwA2 loading
 def load_AwA2():
 
-    location=r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\AwA2-data\Animals_with_Attributes2"
-    attributes=r"\predicates_nonumber.txt"
-    classes=r"\classes_nonumber.txt"
-    assignments=r"\predicate-matrix-continuous.txt"
+    location=r".\AWA2_dataset\AwA2-data\Animals_with_Attributes2"
+    attributes=r"."
+    classes=r"."
+    assignments=r"."
     
     attributes=pd.read_csv(location+attributes, sep=" ")
     predicates=attributes["predicate"].tolist()
@@ -96,10 +91,10 @@ def load_AwA2():
 #function for AwA2 loading
 def load_CUB():
 
-    location=r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\CUB"
-    attributes=r"\predicates_nonumber.txt"
-    classes=r"\classes_nonumber.txt"
-    assignments=r"\predicate-matrix-continuous.txt"
+    location=r".\CUB"
+    attributes=r"."
+    classes=r"."
+    assignments=r"."
     
     attributes=pd.read_csv(location+attributes, sep=" ")
     predicates=attributes["predicate"].tolist()
@@ -251,26 +246,9 @@ def draw_heatmap(feature_map, img_test):
 
 
 
-#function for cifar10 with attributes loading
-def load_cifar10():
 
-    location=r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\cifar10_words\Zero-Shot Learning Through Cross-Modal Transfer\zslearning-master\zslearning-master\attributeTraining"
-    attributes=r"\attributes.txt"
-    classes=r"\classes.txt"
-    assignments=r"\assignments.txt"
-    
-    attributes=pd.read_csv(location+attributes, sep=" ")
-    predicates=attributes["predicate"].tolist()
-    
-    classes=pd.read_csv(location+classes, sep=" ")
-    classes1=classes["class"].tolist()
-    
-    data=pd.read_csv(location+assignments, sep=" ", names=classes1)
-       
-    data["features"]=predicates
-    data.set_index("features", inplace=True)
 
-    return data, classes1, predicates
+
 
 #a function to replace rows with the columns and vice versa (this is done to make the columns features)
 #takes a dataframe, list of features and list of classes and returns the converted version

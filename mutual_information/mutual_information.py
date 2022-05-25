@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue May 10 20:54:36 2022
 
-@author: HALIL IBRAHIM
-"""
 
 import pandas as pd
 from utils import *
@@ -16,13 +12,13 @@ np.set_printoptions(suppress=True)
 
 
 #load attributr list
-location=r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\AwA2-data\Animals_with_Attributes2\predicates_nonumber.txt"
+location=r"."
 attributes=pd.read_csv(location, sep=" ")
 predicates=attributes["predicate"].tolist()
 
 
 #load class list
-classes = pd.read_csv(r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\AwA2-data\Animals_with_Attributes2\classes_nonumber.txt", sep=" ")
+classes = pd.read_csv(r".", sep=" ")
 classes = classes["class"].to_list()
 
 
@@ -33,11 +29,11 @@ for i in range(2048):
     feature_list.append("feature{}".format(i))
     
 #2048 attributes extracted from ResNet101 for all 40k images
-attributes = pd.read_csv(r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\AwA2-features\Animals_with_Attributes2\Features\ResNet101\AwA2-features.txt", sep=" ", names=feature_list)
+attributes = pd.read_csv(r".\AWA2_dataset\AwA2-features\Animals_with_Attributes2\Features\ResNet101\AwA2-features.txt", sep=" ", names=feature_list)
 # attributes=attributes.drop("Unnamed: 0", axis=1)
 
 #import label of classes of 40k images
-labels=pd.read_csv(r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\AwA2-features\Animals_with_Attributes2\Features\ResNet101\AwA2-labels.txt", sep=" ", names=["label"])
+labels=pd.read_csv(r".\AWA2_dataset\AwA2-features\Animals_with_Attributes2\Features\ResNet101\AwA2-labels.txt", sep=" ", names=["label"])
 
 #convert labels to 0-based from 1-based
 for i in range(len(labels)):
@@ -48,7 +44,7 @@ X_train, X_test, y_train, y_test = train_test_split(attributes, labels, test_siz
 del attributes
 
 #load the model which is trained before (MLP+language model)
-model = load_model(r"C:\Users\HALIL IBRAHIM\OneDrive - University of Southampton\New_language_based_idea\zero_shot_extensions\AWA2_dataset\My_code_for_AwA2\X-MLP\checkpoints_relu\weights_improvement-13--0.91.hdf5")
+model = load_model(r".\weights_improvement-13--0.91.hdf5")
 
 
 #create a model that gives 85 features as output
