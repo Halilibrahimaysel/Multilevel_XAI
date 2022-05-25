@@ -69,7 +69,7 @@ def random_sampling(df, n_samples, n_columns):
 
 
 
-#function for AwA2 loading
+#load AwA2
 def load_AwA2():
 
     location=r".\AWA2_dataset\AwA2-data\Animals_with_Attributes2"
@@ -88,7 +88,7 @@ def load_AwA2():
 
     return data, classes1, predicates
 
-#function for AwA2 loading
+#load CUB
 def load_CUB():
 
     location=r".\CUB"
