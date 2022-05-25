@@ -4,6 +4,10 @@ This repository contains the official implementation of Multimodal XAI paper sub
                                                    Proposed Architecture
 ![](images/modell.JPG)
 
-                                                      Least Auklet
+                                                     Why is this a Least Auklet?
 ![](images/fig1.JPG)
+
+                                                     Where is Horn?
+![](images/horns.JPG)
+                                 
 
