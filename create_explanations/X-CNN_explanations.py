@@ -77,7 +77,7 @@ print(classes[np.argmax(prediction)], np.max(prediction))
 multiple_model = Model(inputs=final_model.input, outputs=(final_model.get_layer("conv2d").output, final_model.get_layer("activation").output, final_model.get_layer("batch_normalization").output))
 
 # #feed the 8*8*85 features and get the pre and after sigmoid feature maps
-pre_act_map, after_act_map, attribute_values = multiple_model.predict(features_first_img)
+pre_act_map, after_act_map, attribute_values = multiple_model.predict(features_img)
 pre_act_map = np.squeeze(pre_act_map)
 after_act_map = np.squeeze(after_act_map)
 attribute_values = np.squeeze(attribute_values)
@@ -87,7 +87,7 @@ attributes_sorted = np.argsort(attribute_values)[::-1]
 
 
 ### get the highest and lowest gradients w.r.t language model input using utils.py
-gradients_descending, grads = Best_gradients(final_model, "batch_normalization", features_first_img)
+gradients_descending, grads = Best_gradients(final_model, "batch_normalization", features_img)
 
 #print the most important attributes and their indexes
 for attribute in (gradients_descending):
