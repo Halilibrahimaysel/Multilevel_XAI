@@ -12,6 +12,6 @@ This repository contains the official implementation of Multimodal XAI paper sub
 
 For AwA2 dataset, please visit: https://cvml.ist.ac.at/AwA2/
 
-For CUB dataset, please see : https://authors.library.caltech.edu/27452/1/CUB_200_2011.pdf
+For CUB dataset, please see: https://authors.library.caltech.edu/27452/1/CUB_200_2011.pdf
                                  
 
