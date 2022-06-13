@@ -83,7 +83,7 @@ def load_AwA2():
     classes=pd.read_csv(location+classes, sep=" ")
     classes1=classes["class"].tolist()
     
-    data=pd.read_csv(location+assignments, sep="  ", names=predicates)
+    data=pd.read_csv(location+assignments, sep=" ", names=predicates)
     data["labels"]=classes1
 
     return data, classes1, predicates

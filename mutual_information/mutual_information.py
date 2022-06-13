@@ -44,7 +44,7 @@ X_train, X_test, y_train, y_test = train_test_split(attributes, labels, test_siz
 del attributes
 
 #load the model which is trained before (MLP+language model)
-model = load_model(r".\weights_improvement-13--0.91.hdf5")
+model = load_model(r".")
 
 
 #create a model that gives 85 features as output
