@@ -1,5 +1,5 @@
 # Multilevel XAI
-This repository contains the official implementation of Multilevel XAI paper submitted to Neurips 2022: https://neurips.cc/Conferences/2022.
+This repository contains the official implementation of Multilevel XAI paper submitted to ICLR 2023: https://iclr.cc/.
 
                                                       Proposed Architecture
 ![](images/modell.JPG)
