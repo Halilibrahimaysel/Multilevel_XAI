@@ -5,7 +5,7 @@ This repository contains the official implementation of Multilevel XAI paper sub
 ![](images/modell.JPG)
 
                                                      Why is this a Least Auklet?
-![](images/fig1.JPG)
+![](images/bird99.JPG)
 
                                                          Where is Horn?
 ![](images/horns.JPG)
