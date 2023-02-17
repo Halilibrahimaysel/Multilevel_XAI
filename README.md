@@ -16,5 +16,12 @@ For CUB dataset, please see: https://authors.library.caltech.edu/27452/1/CUB_200
 
                                                 Full Attribute-Class Matrix
 ![](images/matrix.pdf)
+
+                                         Algorithm 1 Generation of the training dataset for MLPL
+![](images/algorithm.JPG)
+
+                  Mutual Information of Attributes Calculated by Using Test Images and the Prior Knowledge Given by Experts in Table II in the paper,
+                                          Respectively. Symbol *** Indicates the Value is Less than 0.01.
+![](images/mutual_information.PNG)
                                  
 
