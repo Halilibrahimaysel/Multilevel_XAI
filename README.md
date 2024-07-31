@@ -1,5 +1,5 @@
 # Multilevel XAI
-This repository contains the official implementation of Multilevel XAI paper published at IEEE Transactions on Artificial Intelligence.
+This repository contains the official implementation of "Multilevel Explainable Artificial Intelligence: Visual and Linguistic Bonded Explanations" paper published at IEEE Transactions on Artificial Intelligence.
 
                                                        Proposed Architecture
 ![](images/modell.JPG)
