@@ -1,5 +1,5 @@
 # Multilevel XAI
-This repository contains the official implementation of Multilevel XAI paper submitted to ICLR 2023: https://iclr.cc/.
+This repository contains the official implementation of Multilevel XAI paper published at IEEE Transactions on Artificial Intelligence.
 
                                                        Proposed Architecture
 ![](images/modell.JPG)
